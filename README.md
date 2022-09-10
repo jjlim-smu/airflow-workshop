@@ -25,7 +25,7 @@ docker logs -f airflow-workshop_webserver_1
 
 <br>
 
-If scheduler is not running as shown above, run the following command in the command line:
+If you encounter an error as shown above in the yellow box, run the following command in the command line:
 ```bash
 docker-compose -f docker-compose-LocalExecutor.yml restart
 ```
