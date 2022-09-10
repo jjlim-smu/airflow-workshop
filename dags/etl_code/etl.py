@@ -29,10 +29,8 @@ def transform():
     df_summary.to_csv('./files/data_summary.csv')
 
 def load():
-    """Load data to sqlite database and avro file"""
-    # conn = sqlite3.connect('airflow.db')
-    
-    # Load data to sqlite bank_customer table
+    """Load data to psql db and parquet file"""
+    # Load data to psql bank_customer table
     df = pd.read_csv('./files/data.csv')
     df.to_parquet('./files/data.parquet')
 
