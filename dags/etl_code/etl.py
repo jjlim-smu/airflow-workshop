@@ -1,5 +1,4 @@
 import pandas as pd
-from sqlalchemy import create_engine
 
 # NOTE: Generate Presigned URL
 url = """
@@ -29,23 +28,13 @@ def transform():
     df_summary.to_csv('./files/data_summary.csv')
 
 def load():
-    """Load data to sqlite database and avro file"""
-    # conn = sqlite3.connect('airflow.db')
-    
-    # Load data to sqlite bank_customer table
+    """Load data to parquet file"""
+    # Load data to parquet file
     df = pd.read_csv('./files/data.csv')
     df.to_parquet('./files/data.parquet')
 
-    # Load summary data to new table
+    # Load summary data to parquet file
     df_summary = pd.read_csv('./files/data_summary.csv')
     df_summary.columns = df_summary.columns.astype(str)
     df_summary.to_parquet('./files/data_summary.parquet')
     print('Successfully load data to parquet file')
-
-    # SQLAlchemy Connection
-    engine = create_engine('postgresql://airflow:c9f3f98eca043dd34fa0141e100d9690224e6245b6b2f7764fdd1638619c53c6@postgres/airflow')
-    # Load data to psql database
-    df.to_sql('bank_customer', con=engine, if_exists='append')
-    df_summary.to_sql('bank_customer_summary', con=engine, if_exists='append')
-
-    print('Successfully load data to psql db')
