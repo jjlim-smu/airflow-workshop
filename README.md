@@ -48,14 +48,6 @@ def load():
     df_summary.columns = df_summary.columns.astype(str)
     df_summary.to_parquet('./files/data_summary.parquet')
     print('Successfully load data to parquet file')
-
-    # SQLAlchemy Connection
-    engine = create_engine('postgresql://airflow:c9f3f98eca043dd34fa0141e100d9690224e6245b6b2f7764fdd1638619c53c6@postgres/airflow')
-    # Load data to psql database
-    df.to_sql('bank_customer', con=engine, if_exists='append')
-    df_summary.to_sql('bank_customer_summary', con=engine, if_exists='append')
-
-    print('Successfully load data to psql db')
 ```
 
 ### Creating a DAG
@@ -171,23 +163,14 @@ def load(results: dict):
     df_summary.columns = df_summary.columns.astype(str)
     df_summary.to_parquet('./files/data_summary.parquet')
     print('Successfully load data to parquet file')
-
-    # SQLAlchemy Connection
-    engine = create_engine('postgresql://airflow:c9f3f98eca043dd34fa0141e100d9690224e6245b6b2f7764fdd1638619c53c6@postgres/airflow')
-    # Load data to psql database
-    df.to_sql('bank_customer', con=engine, if_exists='append')
-    df_summary.to_sql('bank_customer_summary', con=engine, if_exists='append')
-
-    print('Successfully load data to psql db')
-
-extract_task = BashOperator(
-    task_id='extract', 
-    bash_command=f"""curl -o $AIRFLOW_HOME/files/data.csv '{url}'"""
-)
 ```
 
 Define your control flow as shown below
 ```python
+extract_task = BashOperator(
+    task_id='extract', 
+    bash_command=f"""curl -o $AIRFLOW_HOME/files/data.csv '{url}'"""
+)
 transform_task = transform_values()
 load_task = load(transform_task)
 
