@@ -20,6 +20,18 @@ docker logs -f airflow-workshop_webserver_1
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/113248537/189494304-db4621a6-7c19-4d70-844b-14a563bf36a0.png">
 <br>
 
+# Debugging
+![image](https://user-images.githubusercontent.com/113248537/189494803-995e19c7-194a-4c91-b180-8a6aeda7de63.png)
+
+<br>
+
+If you encounter an error as shown above in the yellow box, run the following command in the command line:
+```bash
+docker-compose -f docker-compose-LocalExecutor.yml restart
+```
+
+<br>
+
 # ETL Part I
 
 ### Python Operation
