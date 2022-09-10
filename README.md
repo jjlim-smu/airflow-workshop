@@ -18,8 +18,9 @@ docker logs -f airflow-workshop_webserver_1
 - Password: `airflow`
 
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/113248537/189494304-db4621a6-7c19-4d70-844b-14a563bf36a0.png">
+<br>
 
-## ETL Part I
+# ETL Part I
 
 ### Python Operation
 1. Ingest CSV file from S3 Bucket using BashOperator (to be done later on within the DAG)
@@ -92,10 +93,12 @@ with DAG(
 
 ### Trigger the DAG (if not running)
 Manually trigger the DAG by clicking on the 'Play Button'
+<br>
 
 <img width="1439" alt="image" src="https://user-images.githubusercontent.com/113248537/189493737-b1c160d6-25c7-4381-9ba4-f44a62971dc9.png">
+<br>
 
-## ETL Part II
+# ETL Part II
 
 In `test_etl_taskgroup.py`, define the tasks and taskgroup as shown below
 ```python
@@ -195,4 +198,6 @@ extract_task >> transform_task >> load_task
 
 ### Trigger the DAG (if not running)
 Manually trigger the DAG by clicking on the 'Play Button'
+<br>
+
 <img width="1438" alt="image" src="https://user-images.githubusercontent.com/113248537/189493712-0d4cc2fd-70c1-4ccb-9860-230f217bc2f7.png">
