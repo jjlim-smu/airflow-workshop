@@ -1,0 +1,5 @@
+pandas
+pyarrow
+fastparquet
+
+sqlalchemy==1.4.0
