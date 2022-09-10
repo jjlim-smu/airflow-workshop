@@ -20,6 +20,17 @@ docker logs -f airflow-workshop_webserver_1
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/113248537/189494304-db4621a6-7c19-4d70-844b-14a563bf36a0.png">
 <br>
 
+# Debugging
+![image](https://user-images.githubusercontent.com/113248537/189494751-929d7bb3-afa0-4544-ba73-e171ea9c55a1.png)
+<br>
+
+If scheduler is not running as shown above, run the following command in the command line:
+```bash
+docker-compose -f docker-compose-LocalExecutor.yml restart
+```
+
+<br>
+
 # ETL Part I
 
 ### Python Operation
@@ -201,3 +212,6 @@ Manually trigger the DAG by clicking on the 'Play Button'
 <br>
 
 <img width="1438" alt="image" src="https://user-images.githubusercontent.com/113248537/189493712-0d4cc2fd-70c1-4ccb-9860-230f217bc2f7.png">
+
+<br>
+
