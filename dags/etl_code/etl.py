@@ -1,8 +1,5 @@
 import pandas as pd
 
-# NOTE: Generate Presigned URL
-url = '# PASTE PRESIGNED URL HERE #'
-
 def transform():
     """Perform basic aggregation of data and export data summary to csv"""
     pass
