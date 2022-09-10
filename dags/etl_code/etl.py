@@ -1,5 +1,4 @@
 import pandas as pd
-from sqlalchemy import create_engine
 
 # NOTE: Generate Presigned URL
 url = """
@@ -10,40 +9,11 @@ url = 'https://mybucket-7012.s3.us-east-1.amazonaws.com/bank-customer-churn-pred
 
 def transform():
     """Perform basic aggregation of data and export data summary to csv"""
-    df = pd.read_csv('./files/data.csv')
+    pass
+    # ---------- ADD CODE FOR TRANSFORM() HERE ---------- #
     
-    summary = {}
-    summary['average_credit_score'] = df['credit_score'].agg('mean')
-    summary['median_credit_score'] = df['credit_score'].agg('median')
-    summary['average_age'] = df['age'].agg('mean')
-    summary['median_age'] = df['age'].agg('median')
-    summary['average_salary'] = df['estimated_salary'].agg('mean')
-    summary['median_salary'] = df['estimated_salary'].agg('median')
-    summary['average_balance'] = df['balance'].agg('mean')
-    summary['median_balance'] = df['balance'].agg('median')
-    summary['female_to_male_ratio'] = (df['gender']=='Female').sum() / len(df)
-    summary['male_to_female_ratio'] = (df['gender']=='Male').sum() / len(df)
-
-    df_summary = pd.DataFrame.from_dict(summary, orient='index')
-
-    df_summary.to_csv('./files/data_summary.csv')
 
 def load():
-    """Load data to psql db and parquet file"""
-    # Load data to psql bank_customer table
-    df = pd.read_csv('./files/data.csv')
-    df.to_parquet('./files/data.parquet')
-
-    # Load summary data to new table
-    df_summary = pd.read_csv('./files/data_summary.csv')
-    df_summary.columns = df_summary.columns.astype(str)
-    df_summary.to_parquet('./files/data_summary.parquet')
-    print('Successfully load data to parquet file')
-
-    # SQLAlchemy Connection
-    engine = create_engine('postgresql://airflow:c9f3f98eca043dd34fa0141e100d9690224e6245b6b2f7764fdd1638619c53c6@postgres/airflow')
-    # Load data to psql database
-    df.to_sql('bank_customer', con=engine, if_exists='append')
-    df_summary.to_sql('bank_customer_summary', con=engine, if_exists='append')
-
-    print('Successfully load data to psql db')
+    """Load data to parquet file"""
+    pass
+    # ---------- ADD CODE FOR LOAD() HERE ---------- #
