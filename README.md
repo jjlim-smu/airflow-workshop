@@ -21,7 +21,8 @@ docker logs -f airflow-workshop_webserver_1
 <br>
 
 # Debugging
-![image](https://user-images.githubusercontent.com/113248537/189494751-929d7bb3-afa0-4544-ba73-e171ea9c55a1.png)
+![image](https://user-images.githubusercontent.com/113248537/189494803-995e19c7-194a-4c91-b180-8a6aeda7de63.png)
+
 <br>
 
 If scheduler is not running as shown above, run the following command in the command line:
