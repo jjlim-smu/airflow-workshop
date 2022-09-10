@@ -76,6 +76,7 @@ def load():
 
 ### Creating a DAG
 ```python
+# ---------- 1. DEFINE YOUR DAG HERE ---------- #
 with DAG(
     'TEST_ETL',
     default_args={'retries': 2},
@@ -85,6 +86,7 @@ with DAG(
     catchup=False,
     tags=['workshop'],
 ) as dag:
+    # ---------- 2. DEFINE YOUR TASKS HERE ---------- #
     extract_task = BashOperator(
         task_id='extract', 
         bash_command=f"""curl -o $AIRFLOW_HOME/files/data.csv '{url}'"""
@@ -100,6 +102,7 @@ with DAG(
         python_callable=load,
     )
 
+    # ---------- 3. DEFINE YOUR CONTROL FLOW HERE ---------- #
     extract_task >> transform_task >> load_task
 ```
 
