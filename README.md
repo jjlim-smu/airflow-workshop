@@ -103,8 +103,9 @@ with DAG(
     extract_task >> transform_task >> load_task
 ```
 
-### Trigger the DAG (if not running)
-Manually trigger the DAG by clicking on the 'Play Button'
+### Trigger the DAG
+Unpause the DAG by clicking on the switch button on the left (or top left)
+- Give it awhile for Airflow to trigger the DAG. But if it still does not run after a few minutes, manually trigger the DAG by clicking on the 'Play Button'
 <br>
 
 <img width="1439" alt="image" src="https://user-images.githubusercontent.com/113248537/189493737-b1c160d6-25c7-4381-9ba4-f44a62971dc9.png">
@@ -209,10 +210,8 @@ extract_task >> transform_task >> load_task
 ```
 
 ### Trigger the DAG (if not running)
-Manually trigger the DAG by clicking on the 'Play Button'
+Unpause the DAG by clicking on the switch button on the left (or top left)
+- Give it awhile for Airflow to trigger the DAG. But if it still does not run after a few minutes, manually trigger the DAG by clicking on the 'Play Button'
 <br>
 
 <img width="1438" alt="image" src="https://user-images.githubusercontent.com/113248537/189493712-0d4cc2fd-70c1-4ccb-9860-230f217bc2f7.png">
-
-<br>
-
