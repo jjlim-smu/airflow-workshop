@@ -13,6 +13,12 @@ Run the following command and wait till you see the message "Airflow is running 
 docker logs -f airflow-workshop_webserver_1
 ```
 
+**Once it's ready, head to http://localhost:8080**
+- Username: `airflow`
+- Password: `airflow`
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/113248537/189494304-db4621a6-7c19-4d70-844b-14a563bf36a0.png">
+
 ## ETL Part I
 
 ### Python Operation
@@ -83,6 +89,11 @@ with DAG(
 
     extract_task >> transform_task >> load_task
 ```
+
+### Trigger the DAG (if not running)
+Manually trigger the DAG by clicking on the 'Play Button'
+
+<img width="1439" alt="image" src="https://user-images.githubusercontent.com/113248537/189493737-b1c160d6-25c7-4381-9ba4-f44a62971dc9.png">
 
 ## ETL Part II
 
@@ -181,3 +192,7 @@ load_task = load(transform_task)
 
 extract_task >> transform_task >> load_task
 ```
+
+### Trigger the DAG (if not running)
+Manually trigger the DAG by clicking on the 'Play Button'
+<img width="1438" alt="image" src="https://user-images.githubusercontent.com/113248537/189493712-0d4cc2fd-70c1-4ccb-9860-230f217bc2f7.png">
