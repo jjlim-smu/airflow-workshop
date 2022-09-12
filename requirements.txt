@@ -1,5 +1,4 @@
 pandas
 pyarrow
 fastparquet
-
-sqlalchemy==1.4.0
+sqlalchemy==1.4.41
