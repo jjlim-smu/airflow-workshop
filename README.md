@@ -8,7 +8,7 @@ Install Docker Desktop [https://docs.docker.com/desktop/]
 docker-compose -f docker-compose-LocalExecutor.yml up --build -d
 ```
 ### Check if Airflow is running
-Run the following command and wait till you see the message "Airflow is running on localhost:8080"
+Run the following command and wait till you see the message "Listening on localhost:8080"
 ```bash
 docker logs -f airflow-workshop_webserver_1
 ```
