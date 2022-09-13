@@ -59,7 +59,7 @@ def transform():
 
     df_summary = pd.DataFrame.from_dict(summary, orient='index')
 
-    df_summary.to_csv('data_summary.csv')
+    df_summary.to_csv('./files/data_summary.csv')
 
 def load():
     """Load data to psql db and parquet file"""
