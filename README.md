@@ -39,7 +39,7 @@ docker-compose -f docker-compose-LocalExecutor.yml restart
 2. Perform basic aggregation using PythonOperator
 3. Load results to psql database and parquet file
 
-In `etl_code/etl.py`, fill in the following code snippets accordingly:
+In `dags/etl_code/etl.py`, fill in the following code snippets accordingly:
 ```python
 def transform():
     """Perform basic aggregation of data and export data summary to csv"""
@@ -75,6 +75,7 @@ def load():
 ```
 
 ### Creating a DAG
+In the `dags/test_etl.py`file, define the DAG as shown below
 ```python
 # ---------- 1. DEFINE YOUR DAG HERE ---------- #
 with DAG(
