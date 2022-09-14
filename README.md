@@ -10,7 +10,7 @@ docker-compose -f docker-compose-LocalExecutor.yml up --build -d
 ### Check if Airflow is running
 Run the following command and wait till you see the message "Listening at http://0.0.0.0:8080" (or search for it)
 ```bash
-docker logs -f airflow-workshop_webserver_1
+docker logs -f airflow-workshop-workshop_webserver_1
 ```
 
 **Once it's ready, head to http://localhost:8080**
